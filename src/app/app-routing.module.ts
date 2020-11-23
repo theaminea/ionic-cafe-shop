@@ -10,7 +10,23 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./pages/order/order.module').then( m => m.OrderPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+
 ];
 
 @NgModule({
